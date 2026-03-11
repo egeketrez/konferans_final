@@ -110,7 +110,7 @@ export default function KayitOl() {
   ];
   const transports = ['Araba', 'Otobüs', 'Konferans Otobüsü', 'Uçak'];
   const hotelCheckinDays = ['Perşembe', 'Cuma', 'Cumartesi'];
-  const hotelCheckoutDays = ['Pazar', 'Pazartesi'];
+  const hotelCheckoutDays = ['Cumartesi','Pazar', 'Pazartesi'];
   const selections = [
     '3 Kişi 2 Gece - 3 Silahşörler',
     '2 Kişi 2 Gece - Hansel ve Gretel',

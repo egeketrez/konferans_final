@@ -154,7 +154,7 @@ export default function AnaSayfa() {
   return (
     <main
       className="ana-sayfa-bg"
-      style={{ '--ana-mobile-bg': "url('/images/mobile_bg.jpeg')" }}
+      style={{ '--ana-mobile-bg': "url('/images/mobile_bg.jpg')" }}
     >
       {/* Main banner */}
       <section
@@ -311,17 +311,39 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
 
       <Spacing lg="80" md="60" />
 
-      {/* CTA Section */}
-      <section className="py-5 text-white ana-main-cta-section" style={{ backgroundColor: '#220d1c' }}>
-        <div className="container text-center">
-          <h2 className="mb-3">
-            UR Bölge 2430 37. Rotaract Konferansı
-            <br />
-            Bir Zamanlar Konferans
-          </h2>
-          <Link to="/kayit-ol" className="btn btn-light btn-lg ana-main-cta-btn">
-            Şimdi Kayıt Ol
-          </Link>
+      {/* Final Section Image */}
+      <section className="py-5 ana-main-cta-section" style={{ backgroundColor: '#220d1c' }}>
+        <div className="container d-flex justify-content-center">
+          <div
+            style={{
+              position: 'relative',
+              maxWidth: '420px',
+              width: '100%',
+              borderRadius: '20px',
+              overflow: 'hidden',
+            }}
+          >
+            <div
+              style={{
+                position: 'absolute',
+                inset: 0,
+                backgroundColor: 'rgba(34, 13, 28, 0.4)',
+                zIndex: 1,
+              }}
+            />
+            <div style={{ position: 'relative', zIndex: 2, padding: '10px' }}>
+              <img
+                src="/images/trans_silah.png"
+                alt="Trans Silah"
+                className="img-fluid"
+                style={{
+                  width: '100%',
+                  display: 'block',
+                  borderRadius: '14px',
+                }}
+              />
+            </div>
+          </div>
         </div>
       </section>
 
