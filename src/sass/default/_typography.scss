@@ -33,7 +33,7 @@
 body,
 html {
   color: $secondary;
-  font-family: 'Arcane Fable', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.625em;
@@ -52,16 +52,16 @@ h6 {
   margin: 0 0 20px 0;
   font-weight: 700;
   line-height: 1.2em;
-  font-family: 'Arcane Fable', sans-serif;
+  font-family: 'Berkshire Swash', serif !important;
 }
 
 .cs_primary_font,
 .cs_btn {
-  font-family: 'Arcane Fable', sans-serif;
+  font-family: 'Berkshire Swash', serif !important;
 }
 
 .cs_secondary_font {
-  font-family: 'Arcane Fable', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 h1 {

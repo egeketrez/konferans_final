@@ -6,7 +6,7 @@ export default function Paketler() {
     {
       id: 1,
       subTitle: '3 kişi 2 gece',
-      title: '3 SİLAHŞÖRLER',
+      title: '3 Silahşörler',
       price: '₺12000',
       description: '',
       features: [
@@ -21,7 +21,7 @@ export default function Paketler() {
     {
       id: 2,
       subTitle: '2 kişi 2 gece',
-      title: 'HANSEL VE GRETEL',
+      title: 'Hansel ve Gretel',
       price: '₺12300',
       description: '',
       features: [
@@ -37,7 +37,7 @@ export default function Paketler() {
     {
       id: 3,
       subTitle: '1 kişi 2 gece',
-      title: "ALICE'İN ANAHTARI",
+      title: "Alice'in Anahtarı",
       price: '₺15750',
       description: '',
       features: [
@@ -52,7 +52,7 @@ export default function Paketler() {
     {
       id: 4,
       subTitle: '3 kişi 1 gece cuma',
-      title: 'ASLAN, CADI VE DOLAP',
+      title: 'Aslan, Cadı ve Dolap',
       price: '₺6150',
       description: '',
       features: [
@@ -66,7 +66,7 @@ export default function Paketler() {
     {
       id: 5,
       subTitle: '3 kişi 1 gece cumartesi',
-      title: 'CAMELOT KONSEYİ',
+      title: 'Camelot Konseyi',
       price: '₺8750',
       description: '',
       features: [
@@ -80,7 +80,7 @@ export default function Paketler() {
     {
       id: 6,
       subTitle: '2 kişi 1 gece cuma',
-      title: 'KÜÇÜK PRENS VE TİLKİ',
+      title: 'Küçük Prens ve Tilki',
       price: '₺6500',
       description: '',
       features: [
@@ -94,7 +94,7 @@ export default function Paketler() {
     {
       id: 7,
       subTitle: '2 kişi 1 gece cumartesi',
-      title: 'AY IŞIĞI BALOSU',
+      title: 'Ay Işığı Balosu',
       price: '₺9100',
       description: '',
       features: [
@@ -108,7 +108,7 @@ export default function Paketler() {
     {
       id: 8,
       subTitle: '1 kişi 1 gece cuma',
-      title: 'RAPUNZEL’İN KULESİ',
+      title: 'Rapunzel’in Kulesi',
       price: '₺8500',
       description: '',
       features: [
@@ -122,7 +122,7 @@ export default function Paketler() {
     {
       id: 9,
       subTitle: '1 kişi 1 gece cumartesi',
-      title: 'BÜYÜLÜ BALKABAĞI',
+      title: 'Büyülü Balkabağı',
       price: '₺10750',
       description: '',
       features: [
