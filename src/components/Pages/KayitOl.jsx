@@ -152,6 +152,19 @@ export default function KayitOl() {
     if (!formData.transport) {
       newErrors.transport = 'Ulaşım tercihi seçilmelidir';
     }
+    if (!formData.accommodation) {
+      newErrors.accommodation = 'Otele giriş günü seçilmelidir';
+    }
+    if (!formData.checkoutDay) {
+      newErrors.checkoutDay = 'Otel çıkış günü seçilmelidir';
+    }
+    // roommate is optional
+    if (!formData.emergencyContactName) {
+      newErrors.emergencyContactName = 'Acil durum kişisi ismi gereklidir';
+    }
+    if (!formData.emergencyContactPhone) {
+      newErrors.emergencyContactPhone = 'Acil durum kişisi numarası gereklidir';
+    }
     if (!formData.selection) {
       newErrors.selection = 'Seçim yapılması gereklidir';
     }
@@ -264,6 +277,7 @@ export default function KayitOl() {
                   placeholder="example@email.com"
                   value={formData.email}
                   onChange={handleInputChange}
+                  required
                 />
                 {errors.email && <div className="invalid-feedback d-block">{errors.email}</div>}
               </div>
@@ -279,6 +293,7 @@ export default function KayitOl() {
                   className={`form-control ${errors.fullName ? 'is-invalid' : ''}`}
                   value={formData.fullName}
                   onChange={handleInputChange}
+                  required
                 />
                 {errors.fullName && <div className="invalid-feedback d-block">{errors.fullName}</div>}
               </div>
@@ -294,6 +309,7 @@ export default function KayitOl() {
                   className={`form-control ${errors.tcNo ? 'is-invalid' : ''}`}
                   value={formData.tcNo}
                   onChange={handleInputChange}
+                  required
                 />
                 {errors.tcNo && <div className="invalid-feedback d-block">{errors.tcNo}</div>}
               </div>
@@ -310,6 +326,7 @@ export default function KayitOl() {
                   placeholder="05xx xxx xx xx"
                   value={formData.phone}
                   onChange={handleInputChange}
+                  required
                 />
                 {errors.phone && <div className="invalid-feedback d-block">{errors.phone}</div>}
               </div>
@@ -324,6 +341,7 @@ export default function KayitOl() {
                   className={`form-select ${errors.clubName ? 'is-invalid' : ''}`}
                   value={formData.clubName}
                   onChange={handleInputChange}
+                  required
                 >
                   <option value="">Kulübünüzü Seçin</option>
                   {clubs.map((club) => (
@@ -345,6 +363,7 @@ export default function KayitOl() {
                   className={`form-select ${errors.position ? 'is-invalid' : ''}`}
                   value={formData.position}
                   onChange={handleInputChange}
+                  required
                 >
                   <option value="">Görevinizi Seçin</option>
                   {positions.map((pos) => (
@@ -366,6 +385,7 @@ export default function KayitOl() {
                   className={`form-select ${errors.transport ? 'is-invalid' : ''}`}
                   value={formData.transport}
                   onChange={handleInputChange}
+                  required
                 >
                   <option value="">Ulaşım Seçin</option>
                   {transports.map((t) => (
@@ -379,14 +399,15 @@ export default function KayitOl() {
 
               <div className="mb-4">
                 <label htmlFor="accommodation" className="form-label">
-                  Hangi gün otele giriş yapacaksınız?
+                  Hangi gün otele giriş yapacaksınız? <span className="text-danger">*</span>
                 </label>
                 <select
                   id="accommodation"
                   name="accommodation"
-                  className="form-select"
+                  className={`form-select ${errors.accommodation ? 'is-invalid' : ''}`}
                   value={formData.accommodation}
                   onChange={handleInputChange}
+                  required
                 >
                   <option value="">Gün seçin</option>
                   {hotelCheckinDays.map((day) => (
@@ -395,18 +416,20 @@ export default function KayitOl() {
                     </option>
                   ))}
                 </select>
+                {errors.accommodation && <div className="invalid-feedback d-block">{errors.accommodation}</div>}
               </div>
 
               <div className="mb-4">
                 <label htmlFor="checkoutDay" className="form-label">
-                  Hangi gün çıkış yapacaksınız?
+                  Hangi gün çıkış yapacaksınız? <span className="text-danger">*</span>
                 </label>
                 <select
                   id="checkoutDay"
                   name="checkoutDay"
-                  className="form-select"
+                  className={`form-select ${errors.checkoutDay ? 'is-invalid' : ''}`}
                   value={formData.checkoutDay}
                   onChange={handleInputChange}
+                  required
                 >
                   <option value="">Gün seçin</option>
                   {hotelCheckoutDays.map((day) => (
@@ -415,6 +438,7 @@ export default function KayitOl() {
                     </option>
                   ))}
                 </select>
+                {errors.checkoutDay && <div className="invalid-feedback d-block">{errors.checkoutDay}</div>}
               </div>
 
               <div className="mb-4">
@@ -434,32 +458,38 @@ export default function KayitOl() {
 
               <div className="mb-4">
                 <label htmlFor="emergencyContactName" className="form-label">
-                  Acil Durumda Ulaşılacak Kişi İsmi
+                  Acil Durumda Ulaşılacak Kişi İsmi <span className="text-danger">*</span>
                 </label>
                 <input
                   type="text"
                   id="emergencyContactName"
                   name="emergencyContactName"
-                  className="form-control"
-                  placeholder="İsteğe bağlı"
+                  className={`form-control ${errors.emergencyContactName ? 'is-invalid' : ''}`}
                   value={formData.emergencyContactName}
                   onChange={handleInputChange}
+                  required
                 />
+                {errors.emergencyContactName && (
+                  <div className="invalid-feedback d-block">{errors.emergencyContactName}</div>
+                )}
               </div>
 
               <div className="mb-4">
                 <label htmlFor="emergencyContactPhone" className="form-label">
-                  Acil Durumda Ulaşılacak Kişi Numarası
+                  Acil Durumda Ulaşılacak Kişi Numarası <span className="text-danger">*</span>
                 </label>
                 <input
                   type="tel"
                   id="emergencyContactPhone"
                   name="emergencyContactPhone"
-                  className="form-control"
-                  placeholder="İsteğe bağlı"
+                  className={`form-control ${errors.emergencyContactPhone ? 'is-invalid' : ''}`}
                   value={formData.emergencyContactPhone}
                   onChange={handleInputChange}
+                  required
                 />
+                {errors.emergencyContactPhone && (
+                  <div className="invalid-feedback d-block">{errors.emergencyContactPhone}</div>
+                )}
               </div>
 
               <div className="mb-4">
@@ -472,6 +502,7 @@ export default function KayitOl() {
                   className={`form-select ${errors.selection ? 'is-invalid' : ''}`}
                   value={formData.selection}
                   onChange={handleInputChange}
+                  required
                 >
                   <option value="">Seçin</option>
                   {selections.map((opt) => (
@@ -495,7 +526,7 @@ export default function KayitOl() {
                     style={{
                       backgroundColor: paymentMethod === 'card' ? '#742640' : 'transparent',
                       borderColor: '#742640',
-                      color: '#220d1c',
+                      color: '#fff',
                     }}
                     onClick={() => {
                       setPaymentMethod('card');
@@ -513,7 +544,7 @@ export default function KayitOl() {
                     style={{
                       backgroundColor: paymentMethod === 'receipt' ? '#742640' : 'transparent',
                       borderColor: '#742640',
-                      color: '#220d1c',
+                      color: '#fff',
                     }}
                     onClick={() => {
                       setPaymentMethod('receipt');

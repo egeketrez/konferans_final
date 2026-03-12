@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Spacing from '../Spacing';
 import About from '../About';
+import { formatPrice } from '../../utils/formatPrice';
 
 export default function AnaSayfa() {
   const [sliderIndex, setSliderIndex] = useState(0);
+  const splitVideoRef = useRef(null);
 
   const packages = [
     {
@@ -151,6 +153,29 @@ export default function AnaSayfa() {
     }
   };
 
+  useEffect(() => {
+    const el = splitVideoRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!splitVideoRef.current) return;
+          if (entry.isIntersecting) {
+            const playPromise = splitVideoRef.current.play?.();
+            if (playPromise?.catch) playPromise.catch(() => {});
+          } else {
+            splitVideoRef.current.pause?.();
+          }
+        }
+      },
+      { threshold: 0.6 }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <main
       className="ana-sayfa-bg"
@@ -170,7 +195,7 @@ export default function AnaSayfa() {
         }}
       >
         <img
-          src="/images/yuvarlak_logolu_banner.png"
+          src="/images/logolu_banner_son.png"
           alt=""
           aria-hidden="true"
           className="ana-mobile-banner-bg"
@@ -183,12 +208,67 @@ export default function AnaSayfa() {
       </section>
 
       <div className="ana-mobile-first-logo" aria-hidden="true">
-        {/* <p className="logo-subtext">UR Bölge 2430 37. Rotaract Konferansı</p>
-        <p className="logo-subtext">Ankara Tandoğan Rotaract Kulübü</p> */}
         <img src="/images/Logo%20vek-cropped.svg" alt="" />
         <p className="logo-subtext">AQI PEGASOS ROYAL HOTEL</p>
         <p className="logo-subtext">1-3 MAYIS</p>
       </div>
+
+      {/* Mobile-only image section (we'll place your image here next) */}
+      <section
+        className="ana-mobile-image-section"
+        aria-label="Ana sayfa mobil görsel bölümü"
+      >
+        <div className="container">
+          <div className="ana-mobile-image-card">
+            <div
+              className="ana-mobile-image-media"
+              aria-label="Konferans davet görseli"
+              role="img"
+              style={{
+                backgroundImage: "url('/images/Website%20Kopyas%C4%B1%20(1).png')",
+              }}
+            />
+            <div className="ana-mobile-image-logos" aria-label="Rotaract logoları">
+              <img
+                className="ana-mobile-image-logo"
+                src="/images/Rotaract%20B%C3%B6lge%202430%20Logo%20Beyaz.png"
+                alt="Rotaract Bölge 2430"
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="ana-mobile-image-logo"
+                src="/images/Rotaract%20Logo_EN21%20(1)%20copy.png"
+                alt="Ankara Tandoğan Rotaract Kulübü"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile-only video section */}
+      <section
+        className="ana-mobile-video-section"
+        aria-label="Ana sayfa mobil tanıtım videosu"
+      >
+        <div className="container">
+          <div className="ana-mobile-video-card">
+            <video
+              ref={splitVideoRef}
+              className="ana-mobile-video"
+              muted
+              playsInline
+              preload="metadata"
+              controls
+              aria-label="Tanıtım videosu"
+            >
+              <source src="/images/tanitim_video_eski.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
 
       {/* About Section */}
       <div className="ana-about-mobile-textonly">
@@ -235,23 +315,15 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
                       boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                     }}
                   >
-                    {pkg.id <= 3 && (
-                      <div
-                        className="badge position-absolute top-0 start-50 translate-middle-x mt-2"
-                        style={{ backgroundColor: '#220d1c', color: '#fff', zIndex: 2 }}
-                      >
-                        İndirimli Fiyat
-                      </div>
-                    )}
+                    <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
                     <img src={pkg.image} alt={pkg.title} className="card-img-top" />
-                    <div className="card-body d-flex flex-column" style={{ color: '#fff' }}>
-                      <p className="small mb-1" style={{ color: '#fff' }}>{pkg.subTitle}</p>
-                      <h5 className="card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
+                    <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>
+                      <p className="ana-paketler-subtitle mb-2" style={{ color: '#fff' }}>{pkg.subTitle}</p>
                       {pkg.description && (
                         <p className="small ana-paketler-desc" style={{ color: '#fff' }}>{pkg.description}</p>
                       )}
                       <div className="mb-4">
-                        <span className="h3" style={{ color: '#fff' }}>{pkg.price}</span>
+                        <span className="h3" style={{ color: '#fff' }}>{formatPrice(pkg.price)}</span>
                       </div>
                       <ul className="list-unstyled mb-4 flex-grow-1">
                         {pkg.features.map((feature, idx) => (
@@ -319,44 +391,6 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
       </div>
 
       <Spacing lg="80" md="60" />
-
-      {/* Final Section Image */}
-      <section className="py-5 ana-main-cta-section" style={{ backgroundColor: '#220d1c' }}>
-        <div className="container d-flex justify-content-center">
-          <div
-            style={{
-              position: 'relative',
-              maxWidth: '420px',
-              width: '100%',
-              borderRadius: '20px',
-              overflow: 'hidden',
-            }}
-          >
-            <div
-              style={{
-                position: 'absolute',
-                inset: 0,
-                backgroundColor: 'rgba(34, 13, 28, 0.4)',
-                zIndex: 1,
-              }}
-            />
-            <div style={{ position: 'relative', zIndex: 2, padding: '10px' }}>
-              <img
-                src="/images/trans_silah.png"
-                alt="Trans Silah"
-                className="img-fluid"
-                style={{
-                  width: '100%',
-                  display: 'block',
-                  borderRadius: '14px',
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <Spacing lg="50" md="40" />
     </main>
   );
 }

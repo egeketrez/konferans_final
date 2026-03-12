@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { formatPrice } from '../../utils/formatPrice';
 
 export default function Paketler() {
   const packages = [
@@ -154,15 +155,15 @@ export default function Paketler() {
                   boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                 }}
               >
+                <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
                 <img src={pkg.image} alt={pkg.title} className="card-img-top" />
-                <div className="card-body d-flex flex-column" style={{ color: '#fff' }}>
-                  <p className="small mb-1" style={{ color: '#fff' }}>{pkg.subTitle}</p>
-                  <h5 className="card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
+                <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>
+                  <p className="ana-paketler-subtitle mb-2" style={{ color: '#fff' }}>{pkg.subTitle}</p>
                   {pkg.description && (
                     <p className="small" style={{ color: '#fff' }}>{pkg.description}</p>
                   )}
                   <div className="mb-4">
-                    <span className="h3" style={{ color: '#fff' }}>{pkg.price}</span>
+                    <span className="h3" style={{ color: '#fff' }}>{formatPrice(pkg.price)}</span>
                   </div>
                   <ul className="list-unstyled mb-4 flex-grow-1">
                     {pkg.features.map((feature, idx) => (
