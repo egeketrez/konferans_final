@@ -447,8 +447,8 @@
       position: fixed;
       width: 100vw;
       left: -100vw;
-      background-color: #fff;
-      color: $primary;
+      background-color: $primary;
+      color: #fff;
       padding: 10px 0;
       top: 0;
       overflow: auto;
@@ -469,6 +469,7 @@
         display: block;
         padding: 12px 15px;
         line-height: 16px;
+        color: #fff;
       }
       > li {
         > a {

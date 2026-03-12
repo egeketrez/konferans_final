@@ -7,7 +7,7 @@ export default function Layout2({ darkMode }) {
   return (
     <div className={`${darkMode ? 'cs_dark' : ''}`}>
       <Header
-        logoUrl="/images/logo_white.svg"
+        logoUrl="/images/konf_logo.png"
         colorVariant="cs_color_1"
         actionBtnText="Getting Started"
         actionBtnUrl="/contact"

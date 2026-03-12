@@ -98,7 +98,7 @@ export default function Footer() {
             <div className="col-lg-3 col-sm-6">
               <div className="cs_footer_item">
                 <div className="cs_text_widget">
-                  <img src="/images/logo_white.svg" alt="Logo" />
+                  <img src="/images/konf_logo.png" alt="Logo" />
                 </div>
                 <ul className="cs_menu_widget cs_mp0">
                   {addressDataList.map((item, index) => (

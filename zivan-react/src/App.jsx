@@ -7,6 +7,7 @@ import Hakkimizda from './components/Pages/Hakkimizda';
 import KayitOl from './components/Pages/KayitOl';
 import Paketler from './components/Pages/Paketler';
 import Iletisim from './components/Pages/Iletisim';
+import Ulasim from './components/Pages/Ulasim';
 
 function App() {
   const { pathname } = useLocation();
@@ -23,6 +24,7 @@ function App() {
         <Route path="kayit-ol" element={<KayitOl />} />
         <Route path="paketler" element={<Paketler />} />
         <Route path="iletisim" element={<Iletisim />} />
+        <Route path="ulasim" element={<Ulasim />} />
       </Route>
     </Routes>
   );

@@ -35,7 +35,7 @@ export default function Iletisim() {
   };
 
   return (
-    <section className="py-5">
+    <section className="py-5 iletisim-page">
       <div className="container">
         <h1 className="mb-5" style={{marginTop: '50px'}}>İletişim</h1>
         <div className="row">
@@ -107,7 +107,11 @@ export default function Iletisim() {
                   {contactErrors.message && <div className="invalid-feedback d-block">{contactErrors.message}</div>}
                 </div>
 
-                <button type="submit" className="btn btn-primary w-100">
+                <button
+                  type="submit"
+                  className="btn w-100"
+                  style={{ backgroundColor: '#220d1c', borderColor: '#220d1c', color: '#fff' }}
+                >
                   Gönder
                 </button>
               </form>
@@ -123,6 +127,23 @@ export default function Iletisim() {
                   <a href="mailto:anktandoganrac@gmail.com">anktandoganrac@gmail.com</a>
                 </p>
               </div>
+
+              <div className="mb-4">
+                <h5 className="mb-2">Yusuf Ufuk Altınöz</h5>
+                <p className="mb-1">Bir Zamanlar Konferans Ana Komite Başkanı</p>
+                <p className="mb-0">
+                  Telefon Numarası: <a href="tel:+905310345705">+90 531 034 57 05</a>
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <h5 className="mb-2">Pınar Tektaş</h5>
+                <p className="mb-1">Ankara Tandoğan Rotaract Kulübü Başkanı</p>
+                <p className="mb-0">
+                  Telefon Numarası: <a href="tel:+905517059113">+90 551 705 91 13</a>
+                </p>
+              </div>
+
               <div className="mt-5" style={{ height: '400px' }}>
                 <iframe
                   title="Pegasos Royal Location"

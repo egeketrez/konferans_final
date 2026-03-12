@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom'; // Link may not be needed but kept for logo
+import { Link } from 'react-router-dom'; // Link may not be needed but kept for logo
 
 
 export default function Header({
@@ -10,7 +10,6 @@ export default function Header({
 }) {
   const [isSticky, setIsSticky] = useState(false);
   const [mobileToggle, setMobileToggle] = useState(false);
-  const location = useLocation();
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 0) {
@@ -31,16 +30,22 @@ export default function Header({
         colorVariant ? colorVariant : 'cs_primary_color'
       } ${isSticky ? 'cs_gescout_show' : ''}`}
       style={{
-        backgroundColor:
-          location.pathname === '/' ? (isSticky ? '#742640' : 'transparent') : '#742640',
+        backgroundColor: '#220d1c',
       }}
     >
       <div className="cs_main_header">
         <div className="container">
           <div className="cs_main_header_in">
-            <div className="cs_main_header_left">
-              <Link className="cs_site_branding" to="/">
-                <img src={logoUrl} alt="Logo" style={{ transform: 'scale(5) translate(-10px, 5px)', transformOrigin: 'left center' }} />
+            <div
+              className="cs_main_header_left d-none d-lg-block"
+              style={{ display: 'flex', alignItems: 'center', height: '100%' }}
+            >
+              <Link className="cs_site_branding" to="/" style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
+                <img
+                  src={logoUrl}
+                  alt="Logo"
+                  style={{ maxHeight: '208px', width: 'auto', display: 'block', transform: 'translateY(18px)' }}
+                />
               </Link>
             </div>
             <div className="cs_main_header_center">

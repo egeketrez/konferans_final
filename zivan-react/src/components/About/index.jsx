@@ -45,19 +45,27 @@ export default function About({
               <div className="cs_height_30 cs_height_lg_30" />
               <p className="m-0">{subTitle}</p>
             </div>
-            <div className="cs_height_40 cs_height_lg_30" />
-            <ul className="cs_list cs_style_1 cs_primary_font cs_primary_color cs_semibold cs_mp0 cs_fs_21">
-              {featureList?.map((item, index) => (
-                <li key={index}>
-                  <i className="d-flex">
-                    <Icon icon="fa6-regular:circle-check" />
-                  </i>
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <div className="cs_height_40 cs_height_lg_30" />
-            <Button btnText={btnText} btnUrl={btnUrl} />
+            {featureList?.length > 0 && (
+              <>
+                <div className="cs_height_40 cs_height_lg_30" />
+                <ul className="cs_list cs_style_1 cs_primary_font cs_primary_color cs_semibold cs_mp0 cs_fs_21">
+                  {featureList.map((item, index) => (
+                    <li key={index}>
+                      <i className="d-flex">
+                        <Icon icon="fa6-regular:circle-check" />
+                      </i>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {btnText && (
+              <>
+                <div className="cs_height_40 cs_height_lg_30" />
+                <Button btnText={btnText} btnUrl={btnUrl} />
+              </>
+            )}
           </div>
         </div>
       </div>
