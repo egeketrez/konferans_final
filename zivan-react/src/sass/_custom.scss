@@ -386,12 +386,15 @@
     text-align: center;
     font-family: 'Arcane Fable', sans-serif;
     font-size: clamp(24px, 6vw, 38px);
-    line-height: 1.1;
+    line-height: 1.2;
     letter-spacing: 0.02em;
     color: var(--ana-logo-gold);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
     margin: 10px auto 0;
-    white-space: nowrap;
+  }
+
+  .ana-sayfa-bg .ana-mobile-first-logo .logo-subtext + .logo-subtext {
+    margin-top: 6px;
   }
 
   .ana-paketler-slider .card-body .list-unstyled {

@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.c11c4ab0.css",
-    "main.js": "/static/js/main.d4a9d46a.js",
+    "main.css": "/static/css/main.bfa5b725.css",
+    "main.js": "/static/js/main.b61603e0.js",
     "static/media/Legquinne-Regular.ttf": "/static/media/Legquinne-Regular.7fdf90708ee35aa0c200.ttf",
     "static/media/Arcane Fable.ttf": "/static/media/Arcane Fable.29ba03ae9d93f638c499.ttf",
     "static/media/Cambore.ttf": "/static/media/Cambore.3caad4093df0a529ce1c.ttf",
     "index.html": "/index.html",
-    "main.c11c4ab0.css.map": "/static/css/main.c11c4ab0.css.map",
-    "main.d4a9d46a.js.map": "/static/js/main.d4a9d46a.js.map"
+    "main.bfa5b725.css.map": "/static/css/main.bfa5b725.css.map",
+    "main.b61603e0.js.map": "/static/js/main.b61603e0.js.map"
   },
   "entrypoints": [
-    "static/css/main.c11c4ab0.css",
-    "static/js/main.d4a9d46a.js"
+    "static/css/main.bfa5b725.css",
+    "static/js/main.b61603e0.js"
   ]
 }
