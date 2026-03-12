@@ -142,7 +142,7 @@ export default function Paketler() {
   return (
     <section className="py-5 paketler-page" style={{ backgroundColor: '#220d1c' }}>
       <div className="container">
-        <h1 className="text-center mb-5" style={{marginTop: '50px'}}>Paketler</h1>
+        <h1 className="text-center mb-5" style={{marginTop: '50px'}}>Konaklama Paketleri</h1>
         <div className="row">
           {packages.map((pkg) => (
             <div className="col-lg-4 mb-4" key={pkg.id}>
