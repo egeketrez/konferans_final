@@ -170,7 +170,7 @@
     justify-content: center;
     align-items: center;
     min-height: 50svh;
-    margin-top: 40px;
+    margin-top: 120px;
     padding-top: 0;
     margin-bottom: 20px;
     width: 100%;
@@ -188,11 +188,19 @@
   }
 
   .ana-sayfa-bg .ana-mobile-first-logo .logo-subtext {
-    font-family: "Berkshire Swash", cursive;
-    color: #fff;
-    font-size: 1.5rem;
-    margin-top: 15px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Arcane Fable", sans-serif;
+    text-transform: uppercase;
+    color: #F0B84A !important;
+    font-size: 1.8rem;
+    margin: 2px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), 0 0 10px rgba(240, 184, 74, 0.2);
+    font-weight: normal;
+    line-height: 1.1;
+  }
+
+  .ana-sayfa-bg .ana-mobile-first-logo img {
+    margin-top: 0;
+    margin-bottom: -40px;
   }
 }
 

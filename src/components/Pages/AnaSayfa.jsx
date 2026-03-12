@@ -183,7 +183,11 @@ export default function AnaSayfa() {
       </section>
 
       <div className="ana-mobile-first-logo" aria-hidden="true">
+        {/* <p className="logo-subtext">UR Bölge 2430 37. Rotaract Konferansı</p>
+        <p className="logo-subtext">Ankara Tandoğan Rotaract Kulübü</p> */}
         <img src="/images/Logo%20vek-cropped.svg" alt="" />
+        <p className="logo-subtext">AQI PEGASOS ROYAL HOTEL</p>
+        <p className="logo-subtext">1-3 MAYIS</p>
       </div>
 
       {/* About Section */}
