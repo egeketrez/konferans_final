@@ -535,20 +535,36 @@
 
 .ana-paketler-slider .card-img-top,
 .paketler-page .card-img-top {
-  width: calc(100% - 24px);
-  height: 320px;
-  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Revert to contain to avoid cropping any images */
   object-position: center;
   display: block;
-  margin: 12px auto 0;
-  border-radius: 10px;
+}
+
+.ana-paketler-slider .pkg-img-wrapper,
+.paketler-page .pkg-img-wrapper {
+  width: 100%;
+  height: 380px; /* Fixed height for image area to keep alignment */
+  flex-shrink: 0;
+  margin: 0 auto;
+  border-radius: 24px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .ana-paketler-slider .ana-paketler-card-title,
 .paketler-page .ana-paketler-card-title {
   margin: 0;
-  padding: 14px 12px 10px;
+  padding: 90px 12px 10px;
   text-align: center;
+  font-size: 2rem !important;
+  height: 150px; /* Force uniform height so text wrapping doesn't push images down */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .ana-paketler-slider .card-body,
@@ -598,7 +614,7 @@
 }
 
 .ana-paketler-slider .card-img-top {
-  object-position: top center;
+  object-position: center;
 }
 
 .ana-paketler-slider {
@@ -681,23 +697,18 @@
     }
   }
 
-  .ana-paketler-slider .card-img-top {
-    height: 260px;
-  }
+  /* Let the wrapper aspect-ratio handle the height automatically */
 }
 
 
 @media (max-width: 767px) {
-  .ana-paketler-slider .card-img-top,
-  .paketler-page .card-img-top {
+  .ana-paketler-slider .pkg-img-wrapper,
+  .paketler-page .pkg-img-wrapper {
     width: 100%;
-    max-width: 280px;
-    height: auto;
-    aspect-ratio: 1;
-    object-fit: contain;
+    max-width: 320px;
+    height: 380px;
     margin-left: auto;
     margin-right: auto;
-    display: block;
   }
 
   .paketler-page .card-body .list-unstyled {
