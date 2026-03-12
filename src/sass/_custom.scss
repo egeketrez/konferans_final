@@ -1373,3 +1373,75 @@ h6,
     display: none;
   }
 }
+
+.ana-paketler-card-title.title-shifted {
+  padding-top: 90px !important; /* Increased to prevent overlap */
+}
+
+.pkg-header-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pkg-discount-ribbon {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #f0d28a 0%, #b28e28 50%, #8a6d1d 100%);
+  color: #220d1c;
+  padding: 10px 15px 30px; /* Micro-adjustment: shortened by 2px */
+  font-weight: 900;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  font-family: 'Arcane Fable', sans-serif;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the bottom */
+  line-height: 1.1;
+  min-width: 140px;
+  
+  /* Deepened Swallowtail Shape */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 92%, 0% 100%);
+  
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 50% 92%, 0% 100%);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -10px;
+    right: -10px;
+    height: 15px;
+    background: #4a3a0f;
+    z-index: -1;
+    clip-path: polygon(0 100%, 10px 0, calc(100% - 10px) 0, 100% 100%);
+  }
+  
+  .ribbon-line-1 {
+    font-size: 1.2rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
+    transform: translateY(16px); /* Shifted even further down */
+  }
+
+  .ribbon-line-2 {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    opacity: 0.95;
+    transform: translateY(16px); /* Shifted even further down */
+  }
+}

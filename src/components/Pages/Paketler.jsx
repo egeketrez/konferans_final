@@ -18,6 +18,7 @@ export default function Paketler() {
       ],
       image: '/images/silahşör.PNG',
       cta: 'Seç',
+      discounted: true,
     },
     {
       id: 2,
@@ -34,6 +35,7 @@ export default function Paketler() {
       image: '/images/hansel.PNG',
       cta: 'Seç',
       featured: true,
+      discounted: true,
     },
     {
       id: 3,
@@ -49,6 +51,7 @@ export default function Paketler() {
       ],
       image: '/images/alice.png',
       cta: 'Seç',
+      discounted: true,
     },
     {
       id: 4,
@@ -155,7 +158,15 @@ export default function Paketler() {
                   boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                 }}
               >
-                <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
+                <div className="pkg-header-container">
+                  {pkg.discounted && (
+                    <div className="pkg-discount-ribbon">
+                      <span className="ribbon-line-1">İNDİRİMLİ</span>
+                      <span className="ribbon-line-2">FİYAT!</span>
+                    </div>
+                  )}
+                  <h5 className={`card-title ana-paketler-card-title ${pkg.discounted ? 'title-shifted' : ''}`} style={{ color: '#fff' }}>{pkg.title}</h5>
+                </div>
                 <img src={pkg.image} alt={pkg.title} className="card-img-top" />
                 <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>
                   <p className="ana-paketler-subtitle mb-2" style={{ color: '#fff' }}>{pkg.subTitle}</p>
