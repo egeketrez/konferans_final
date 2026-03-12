@@ -293,10 +293,13 @@
 }
 
 .ana-sayfa-bg .ana-about-mobile-textonly .cs_section_subtitle,
-.ana-sayfa-bg .ana-about-mobile-textonly .cs_section_title,
+.ana-sayfa-bg .ana-about-mobile-textonly .cs_section_title {
+  font-family: 'Berkshire Swash', serif;
+}
+
 .ana-sayfa-bg .ana-about-mobile-textonly p,
 .ana-sayfa-bg .ana-about-mobile-textonly li {
-  font-family: 'Arcane Fable', sans-serif;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .ana-sayfa-bg .cs_img_card.cs_style_1::after {
