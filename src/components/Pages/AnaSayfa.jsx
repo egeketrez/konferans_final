@@ -183,7 +183,11 @@ export default function AnaSayfa() {
       </section>
 
       <div className="ana-mobile-first-logo" aria-hidden="true">
-        <img src="/images/Logo%20vek.svg" alt="" />
+        {/* <p className="logo-subtext">UR Bölge 2430 37. Rotaract Konferansı</p>
+        <p className="logo-subtext">Ankara Tandoğan Rotaract Kulübü</p> */}
+        <img src="/images/Logo%20vek-cropped.svg" alt="" />
+        <p className="logo-subtext">AQI PEGASOS ROYAL HOTEL</p>
+        <p className="logo-subtext">1-3 MAYIS</p>
       </div>
 
       {/* About Section */}
@@ -222,8 +226,13 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
                   <div
                     className={`card h-100 ${pkg.featured ? 'shadow-lg' : ''}`}
                     style={{
-                      backgroundColor: '#742640',
-                      borderColor: '#742640',
+                      backgroundColor: 'rgba(116, 38, 64, 0.5)', /* Semi-transparent */
+                      borderColor: 'rgba(255, 255, 255, 0.1)',
+                      borderRadius: '24px',
+                      backdropFilter: 'blur(12px)', /* Strong glassmorphism effect */
+                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      overflow: 'hidden', /* Ensure image doesn't break border radius */
+                      boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                     }}
                   >
                     {pkg.id <= 3 && (

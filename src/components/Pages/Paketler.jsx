@@ -145,8 +145,13 @@ export default function Paketler() {
               <div
                 className={`card h-100 ${pkg.featured ? 'shadow-lg' : ''}`}
                 style={{
-                  backgroundColor: '#742640',
-                  borderColor: '#742640',
+                  backgroundColor: 'rgba(116, 38, 64, 0.5)', /* Semi-transparent */
+                  borderColor: 'rgba(255, 255, 255, 0.1)',
+                  borderRadius: '24px',
+                  backdropFilter: 'blur(12px)', /* Strong glassmorphism effect */
+                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                  overflow: 'hidden', /* Ensure image doesn't break border radius */
+                  boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                 }}
               >
                 <img src={pkg.image} alt={pkg.title} className="card-img-top" />
