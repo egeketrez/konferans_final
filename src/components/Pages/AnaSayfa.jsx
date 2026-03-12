@@ -301,7 +301,7 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
       {/* Packages Slider Section */}
       <section className="py-4 ana-paketler-slider">
         <div className="container">
-          <h2 className="text-center mb-4" style={{ color: '#fff' }}>Paketler</h2>
+          <h2 className="text-center mb-4" style={{ color: '#fff' }}>Konaklama Paketleri</h2>
           <div className="position-relative">
             <div className="row">
               {packages.slice(sliderIndex, sliderIndex + 3).map((pkg) => (
