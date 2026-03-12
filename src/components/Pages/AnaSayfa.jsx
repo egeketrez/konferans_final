@@ -327,7 +327,9 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
                       )}
                       <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
                     </div>
-                    <img src={pkg.image} alt={pkg.title} className="card-img-top" />
+                    <div className="pkg-img-wrapper">
+                      <img src={pkg.image} alt={pkg.title} className="card-img-top" />
+                    </div>
                     <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>
                       <p className="ana-paketler-subtitle mb-2" style={{ color: '#fff' }}>{pkg.subTitle}</p>
                       {pkg.description && (
