@@ -166,12 +166,13 @@
 
   .ana-sayfa-bg .ana-mobile-first-logo {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: calc(100svh - 110px);
-    margin-top: 110px;
+    min-height: 50svh;
+    margin-top: 40px;
     padding-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     width: 100%;
     text-align: center;
   }
@@ -184,6 +185,14 @@
     transform: none;
     display: block;
     margin: 0 auto;
+  }
+
+  .ana-sayfa-bg .ana-mobile-first-logo .logo-subtext {
+    font-family: "Berkshire Swash", cursive;
+    color: #fff;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -340,6 +349,8 @@
   display: block;
   margin: 12px auto 0;
   border-radius: 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .ana-paketler-slider .card-img-top {
