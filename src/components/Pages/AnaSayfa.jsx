@@ -23,6 +23,7 @@ export default function AnaSayfa() {
       ],
       image: '/images/silahşör.PNG',
       cta: 'Seç',
+      discounted: true,
     },
     {
       id: 2,
@@ -39,6 +40,7 @@ export default function AnaSayfa() {
       image: '/images/hansel.PNG',
       cta: 'Seç',
       featured: true,
+      discounted: true,
     },
     {
       id: 3,
@@ -54,6 +56,7 @@ export default function AnaSayfa() {
       ],
       image: '/images/alice.png',
       cta: 'Seç',
+      discounted: true,
     },
     {
       id: 4,
@@ -298,7 +301,7 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
       {/* Packages Slider Section */}
       <section className="py-4 ana-paketler-slider">
         <div className="container">
-          <h2 className="text-center mb-4" style={{ color: '#fff' }}>Paketler</h2>
+          <h2 className="text-center mb-4" style={{ color: '#fff' }}>Konaklama Paketleri</h2>
           <div className="position-relative">
             <div className="row">
               {packages.slice(sliderIndex, sliderIndex + 3).map((pkg) => (
@@ -315,8 +318,18 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
                       boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                     }}
                   >
-                    <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
-                    <img src={pkg.image} alt={pkg.title} className="card-img-top" />
+                    <div className="pkg-header-container">
+                      {pkg.discounted && (
+                        <div className="pkg-discount-ribbon">
+                          <span className="ribbon-line-1">İNDİRİMLİ</span>
+                          <span className="ribbon-line-2">FİYAT!</span>
+                        </div>
+                      )}
+                      <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
+                    </div>
+                    <div className="pkg-img-wrapper">
+                      <img src={pkg.image} alt={pkg.title} className="card-img-top" />
+                    </div>
                     <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>
                       <p className="ana-paketler-subtitle mb-2" style={{ color: '#fff' }}>{pkg.subTitle}</p>
                       {pkg.description && (

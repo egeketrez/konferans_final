@@ -18,6 +18,7 @@ export default function Paketler() {
       ],
       image: '/images/silahşör.PNG',
       cta: 'Seç',
+      discounted: true,
     },
     {
       id: 2,
@@ -34,6 +35,7 @@ export default function Paketler() {
       image: '/images/hansel.PNG',
       cta: 'Seç',
       featured: true,
+      discounted: true,
     },
     {
       id: 3,
@@ -49,6 +51,7 @@ export default function Paketler() {
       ],
       image: '/images/alice.png',
       cta: 'Seç',
+      discounted: true,
     },
     {
       id: 4,
@@ -139,7 +142,7 @@ export default function Paketler() {
   return (
     <section className="py-5 paketler-page" style={{ backgroundColor: '#220d1c' }}>
       <div className="container">
-        <h1 className="text-center mb-5" style={{marginTop: '50px'}}>Paketler</h1>
+        <h1 className="text-center mb-5" style={{marginTop: '50px'}}>Konaklama Paketleri</h1>
         <div className="row">
           {packages.map((pkg) => (
             <div className="col-lg-4 mb-4" key={pkg.id}>
@@ -155,8 +158,18 @@ export default function Paketler() {
                   boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                 }}
               >
-                <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
-                <img src={pkg.image} alt={pkg.title} className="card-img-top" />
+                <div className="pkg-header-container">
+                  {pkg.discounted && (
+                    <div className="pkg-discount-ribbon">
+                      <span className="ribbon-line-1">İNDİRİMLİ</span>
+                      <span className="ribbon-line-2">FİYAT!</span>
+                    </div>
+                  )}
+                  <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
+                </div>
+                <div className="pkg-img-wrapper">
+                  <img src={pkg.image} alt={pkg.title} className="card-img-top" />
+                </div>
                 <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>
                   <p className="ana-paketler-subtitle mb-2" style={{ color: '#fff' }}>{pkg.subTitle}</p>
                   {pkg.description && (
