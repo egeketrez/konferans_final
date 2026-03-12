@@ -155,6 +155,12 @@ export default function Paketler() {
                   boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                 }}
               >
+                {pkg.id <= 3 && (
+                  <div className="ana-paketler-ribbon" aria-hidden="true">
+                    <span className="ana-paketler-ribbon-line">İndirimli</span>
+                    <span className="ana-paketler-ribbon-line">Fiyat!</span>
+                  </div>
+                )}
                 <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
                 <img src={pkg.image} alt={pkg.title} className="card-img-top" />
                 <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>

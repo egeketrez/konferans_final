@@ -225,25 +225,9 @@ export default function AnaSayfa() {
               aria-label="Konferans davet görseli"
               role="img"
               style={{
-                backgroundImage: "url('/images/Website%20Kopyas%C4%B1%20(1).png')",
+                backgroundImage: "url('/images/Website%20Kopyas%C4%B1%20(3).png')",
               }}
             />
-            <div className="ana-mobile-image-logos" aria-label="Rotaract logoları">
-              <img
-                className="ana-mobile-image-logo"
-                src="/images/Rotaract%20B%C3%B6lge%202430%20Logo%20Beyaz.png"
-                alt="Rotaract Bölge 2430"
-                loading="lazy"
-                decoding="async"
-              />
-              <img
-                className="ana-mobile-image-logo"
-                src="/images/Rotaract%20Logo_EN21%20(1)%20copy.png"
-                alt="Ankara Tandoğan Rotaract Kulübü"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
           </div>
         </div>
       </section>
@@ -275,7 +259,7 @@ export default function AnaSayfa() {
         <About
           thumbnail="/images/konf_logo.png"
           uperTitle=""
-          title="Bir Zamanlar Konferans"
+          title="Bir Zamanlar Konferans Hakkında"
           subTitle={`Rotaract Konferansı, bölgemizin kapsadığı 7 farklı ülkeden
 Rotaractör’lerin bir araya geldiği, yıl boyunca yapılan çalışmaların
 değerlendirildiği ve başarıların ödüllendirildiği özel bir organizasyondur.
@@ -315,6 +299,12 @@ Rotaract ruhunu canlı tutar ve kulüpler arası bağı güçlendirir.`}
                       boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.3)'
                     }}
                   >
+                    {pkg.id <= 3 && (
+                      <div className="ana-paketler-ribbon" aria-hidden="true">
+                        <span className="ana-paketler-ribbon-line">İndirimli</span>
+                        <span className="ana-paketler-ribbon-line">Fiyat!</span>
+                      </div>
+                    )}
                     <h5 className="card-title ana-paketler-card-title" style={{ color: '#fff' }}>{pkg.title}</h5>
                     <img src={pkg.image} alt={pkg.title} className="card-img-top" />
                     <div className="card-body d-flex flex-column text-center" style={{ color: '#fff' }}>
