@@ -209,8 +209,7 @@ export default function AnaSayfa() {
 
       <div className="ana-mobile-first-logo" aria-hidden="true">
         <img src="/images/Logo%20vek-cropped.svg" alt="" />
-        <p className="logo-subtext">AQI PEGASOS ROYAL HOTEL</p>
-        <p className="logo-subtext">1-3 MAYIS</p>
+        <p className="logo-subtext">AQI PEGASOS ROYAL HOTEL | ALANYA | 1-3 MAYIS 2026</p>
       </div>
 
       {/* Mobile-only image section (we'll place your image here next) */}

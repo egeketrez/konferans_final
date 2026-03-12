@@ -240,6 +240,33 @@
     z-index: 1;
   }
 
+  /* Konferans Ekibi: same static background on mobile, content flows on top – only starry layer */
+  .konferans-ekibi-bg {
+    min-height: 100vh;
+    position: relative;
+    isolation: isolate;
+    background: none !important;
+    background-color: transparent !important;
+  }
+
+  .konferans-ekibi-bg::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: var(--konferans-ekibi-mobile-bg);
+    background-size: 102% auto;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+    will-change: transform;
+  }
+
+  .konferans-ekibi-bg > * {
+    position: relative;
+    z-index: 1;
+  }
+
   .ana-sayfa-bg .ana-about-mobile-textonly,
   .ana-sayfa-bg .ana-paketler-slider,
   .ana-sayfa-bg .container.text-center.mb-4 {
@@ -358,17 +385,13 @@
     width: min(92vw, 520px);
     text-align: center;
     font-family: 'Arcane Fable', sans-serif;
-    font-size: clamp(20px, 5.2vw, 34px);
+    font-size: clamp(24px, 6vw, 38px);
     line-height: 1.1;
     letter-spacing: 0.02em;
     color: var(--ana-logo-gold);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
-    margin: 10px 0 0;
-  }
-
-  .ana-sayfa-bg .ana-mobile-first-logo .logo-subtext + .logo-subtext {
-    font-size: clamp(18px, 4.8vw, 30px);
-    margin-top: 6px;
+    margin: 10px auto 0;
+    white-space: nowrap;
   }
 
   .ana-paketler-slider .card-body .list-unstyled {
@@ -406,6 +429,28 @@
     background-color: #220d1c !important;
   }
 
+  /* Konferans Ekibi: no solid layer so only starry ::before shows */
+  .konferans-ekibi-bg {
+    background-color: transparent !important;
+  }
+
+  .konferans-ekibi-bg section {
+    background-color: transparent !important;
+    background: none !important;
+  }
+
+  .konferans-ekibi-bg .row [class*='col'] {
+    overflow: visible;
+  }
+
+  .konferans-ekibi-bg img.img-fluid {
+    width: 100%;
+    max-width: 100%;
+    transform: scale(1.12);
+    transform-origin: center center;
+    display: block;
+  }
+
   .konf-page-bg h1,
   .konf-page-bg h2,
   .konf-page-bg h3,
@@ -420,7 +465,9 @@
   .konf-page-bg small,
   .konf-page-bg .text-muted,
   .ana-sayfa-bg .card,
-  .ana-sayfa-bg .card * {
+  .ana-sayfa-bg .card *,
+  .konferans-ekibi-bg h1,
+  .konferans-ekibi-bg .container {
     color: #fff !important;
   }
 

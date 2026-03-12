@@ -16,24 +16,29 @@ export default function KonferansEkibi() {
   ];
 
   return (
-    <section className="py-5">
-      <div className="container">
-        <h1 className="text-center mb-5" style={{marginTop: '50px'}}>Konferans Ekibi</h1>
-        <div className="row">
-          {teamMembers.map((member, idx) => (
-            <div
-              className={`col-md-6 mb-4 ${teamMembers.length % 2 === 1 && idx === teamMembers.length - 1 ? 'offset-md-3' : ''}`}
-              key={member.id}
-            >
-              <img
-                src={member.image}
-                className="img-fluid"
-                alt="Team member"
-              />
-            </div>
-          ))}
+    <div
+      className="konferans-ekibi-bg"
+      style={{ '--konferans-ekibi-mobile-bg': "url('/images/mobile_bg.jpg')" }}
+    >
+      <section className="py-5">
+        <div className="container">
+          <h1 className="text-center mb-5" style={{marginTop: '50px'}}>Konferans Ekibi</h1>
+          <div className="row">
+            {teamMembers.map((member, idx) => (
+              <div
+                className={`col-md-6 mb-4 ${teamMembers.length % 2 === 1 && idx === teamMembers.length - 1 ? 'offset-md-3' : ''}`}
+                key={member.id}
+              >
+                <img
+                  src={member.image}
+                  className="img-fluid"
+                  alt="Team member"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 }
