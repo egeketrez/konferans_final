@@ -642,8 +642,8 @@ export default function KayitOl() {
               <div id="receipt-upload-section" className="card p-4 mt-4 kayit-odeme-box">
                 <h4 className="mb-3">Havale/EFT</h4>
                 <div className="alert alert-light border mb-3" role="alert">
-                  <p className="mb-2"><strong>IBAN:</strong> TR22 0015 7000 0000 0202 1914 69</p>
-                  <p className="mb-2"><strong>Hesap İsmi:</strong> Nejat Ege Ketrez</p>
+                  <p className="mb-2"><strong>IBAN:</strong> TR17 0001 0019 3795 9466 3050 01</p>
+                  <p className="mb-2"><strong>Hesap İsmi:</strong> Yusuf Ufuk Altınöz</p>
                   <p className="mb-0"><strong>Not:</strong> Lütfen açıklamayı boş bırakınız.</p>
                 </div>
                 <div className="mb-3">

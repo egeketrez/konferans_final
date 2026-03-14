@@ -550,8 +550,8 @@ export default function KayitOl() {
               <h3 className="mb-4">Ödeme — Havale / EFT</h3>
 
               <div className="alert alert-light border mb-4" role="alert">
-                <p className="mb-2"><strong>IBAN:</strong> TR22 0015 7000 0000 0202 1914 69</p>
-                <p className="mb-2"><strong>Hesap İsmi:</strong> Nejat Ege Ketrez</p>
+                <p className="mb-2"><strong>IBAN:</strong> TR17 0001 0019 3795 9466 3050 01</p>
+                <p className="mb-2"><strong>Hesap İsmi:</strong> Yusuf Ufuk Altınöz</p>
                 <p className="mb-0"><strong>Not:</strong> Lütfen açıklamayı boş bırakınız.</p>
               </div>
 
